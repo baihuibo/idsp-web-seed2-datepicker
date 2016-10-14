@@ -12,9 +12,10 @@ et = {{et}}; <br>
 
 <br>
 
-<datepicker range-mode=""></datepicker>
-
-<datepicker ng-model="test2" option="rangeOption"></datepicker>
+<datepicker ng-model="test"
+            start-date="st"
+            end-date="et"
+            option="rangeOption"></datepicker>
 
 <button ng-click="test = '2012-12-11'">set test</button>
 
@@ -50,6 +51,7 @@ et = {{et}}; <br>
                 }
             },
             'bootstrap': {'main': 'dist/js/bootstrap.min.js'},
+            'lodash': {'main': 'lodash.js'},
 
             "src": {
                 defaultExtension: 'ts',
@@ -83,6 +85,7 @@ et = {{et}}; <br>
             'moment': 'node_modules/moment',
 
             'bootstrap': 'node_modules/bootstrap/',
+            'lodash': 'node_modules/lodash/',
             'angular-material': 'node_modules/angular-material/',
         }
     });

@@ -1,6 +1,6 @@
 {
   "name": "idsp-web-seed2-datepicker",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "日期选择器",
   "main": "src/datepicker.ts",
   "scripts": {
@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
-    "bootstrap-daterangepicker": "^2.1.24"
+    "bootstrap-daterangepicker": "^2.1.24",
+    "lodash": "^4.16.4"
   }
 }

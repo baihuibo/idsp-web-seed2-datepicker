@@ -5,3 +5,4 @@
 /// <reference path="systemjs/systemjs.d.ts" />
 /// <reference path="daterangepicker/daterangepicker.d.ts" />
 /// <reference path="moment/moment.d.ts" />
+/// <reference path="lodash/lodash.d.ts" />

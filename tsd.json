@@ -22,6 +22,9 @@
     },
     "moment/moment.d.ts": {
       "commit": "bf5a2b96671cf6eb58c51ddbe04183c52e5cb48a"
+    },
+    "lodash/lodash.d.ts": {
+      "commit": "bf5a2b96671cf6eb58c51ddbe04183c52e5cb48a"
     }
   }
 }

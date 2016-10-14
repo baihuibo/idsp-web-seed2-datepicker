@@ -6,6 +6,7 @@ import 'daterangepicker';
 import 'daterangepicker/daterangepicker.css';
 import 'moment';
 import {module} from "angular";
+import {defaultsDeep} from "lodash";
 
 const modName = 'datepicker';
 
@@ -68,7 +69,7 @@ mod.directive('datepicker', ['$timeout', function ($timeout) {
         link(scope, el, attr,
              ngModel: ng.INgModelController){
 
-            let option: daterangepicker.Settings = $.extend(true, {}, defaultSetting, scope['option'] || {});
+            let option: daterangepicker.Settings = defaultsDeep(scope['option'] || {}, defaultSetting);
 
             if (attr.rangeMode != void 0) {
                 option.singleDatePicker = false;
