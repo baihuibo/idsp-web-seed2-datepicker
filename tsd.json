@@ -1,0 +1,27 @@
+{
+  "version": "v4",
+  "repo": "borisyankov/DefinitelyTyped",
+  "ref": "master",
+  "path": "typings",
+  "bundle": "typings/tsd.d.ts",
+  "installed": {
+    "angularjs/angular.d.ts": {
+      "commit": "bf5a2b96671cf6eb58c51ddbe04183c52e5cb48a"
+    },
+    "jquery/jquery.d.ts": {
+      "commit": "bf5a2b96671cf6eb58c51ddbe04183c52e5cb48a"
+    },
+    "systemjs/systemjs.d.ts": {
+      "commit": "bf5a2b96671cf6eb58c51ddbe04183c52e5cb48a"
+    },
+    "bootstrap/bootstrap.d.ts": {
+      "commit": "bf5a2b96671cf6eb58c51ddbe04183c52e5cb48a"
+    },
+    "daterangepicker/daterangepicker.d.ts": {
+      "commit": "bf5a2b96671cf6eb58c51ddbe04183c52e5cb48a"
+    },
+    "moment/moment.d.ts": {
+      "commit": "bf5a2b96671cf6eb58c51ddbe04183c52e5cb48a"
+    }
+  }
+}

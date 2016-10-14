@@ -1,0 +1,43 @@
+{
+  "name": "idsp-web-seed2-datepicker",
+  "version": "1.0.2",
+  "description": "日期选择器",
+  "main": "src/datepicker.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baihuibo/idsp-web-seed2-datepicker.git"
+  },
+  "keywords": [
+    "angular",
+    "ts",
+    "typescript",
+    "datepicker",
+    "daterangepicker"
+  ],
+  "author": "baihuibo@hotmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/baihuibo/idsp-web-seed2-datepicker/issues"
+  },
+  "homepage": "https://github.com/baihuibo/idsp-web-seed2-datepicker#readme",
+  "devDependencies": {
+    "angular": "^1.5.8",
+    "angular-material": "^1.1.1",
+    "jquery": "^3.1.1",
+    "plugin-typescript": "^5.2.7",
+    "systemjs": "^0.19.39",
+    "systemjs-plugin-css": "^0.1.31",
+    "systemjs-plugin-json": "^0.2.0",
+    "systemjs-plugin-less": "^0.1.2",
+    "systemjs-plugin-text": "0.0.9",
+    "tslib": "^1.0.0",
+    "typescript": "^1.8.10"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "bootstrap-daterangepicker": "^2.1.24"
+  }
+}

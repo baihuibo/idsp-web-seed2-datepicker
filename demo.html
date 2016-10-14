@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>日期组件测试</title>
+</head>
+<body>
+
+test = {{test}}; <br>
+st = {{st}}; <br>
+et = {{et}}; <br>
+
+<br>
+
+<datepicker range-mode=""></datepicker>
+
+<datepicker ng-model="test2" option="rangeOption"></datepicker>
+
+<button ng-click="test = '2012-12-11'">set test</button>
+
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/angular/angular.min.js"></script>
+<script src="node_modules/tslib/tslib.js"></script>
+<script src="node_modules/systemjs/dist/system.js"></script>
+<script>
+    SystemJS.set('angular', SystemJS.newModule(angular));
+    SystemJS.register('jquery', [], function () {
+        return jQuery;
+    });
+    SystemJS.config({
+        transpiler: 'ts',
+        typescriptOptions: {
+            module: "system",
+            tsconfig: true
+        },
+        packages: {
+            lesscss: {main: './dist/less.min.js'},
+            css: {main: 'css.js'},
+            less: {main: 'less.js'},
+            text: {main: 'text.js'},
+            "ts": {"main": "plugin.js"},
+            "daterangepicker": {"main": "daterangepicker.js", format: 'cjs'},
+            "moment": {"main": "moment.js"},
+            "typescript": {
+                "main": "typescript.js",
+                "meta": {
+                    "typescript.js": {
+                        "exports": "ts"
+                    }
+                }
+            },
+            'bootstrap': {'main': 'dist/js/bootstrap.min.js'},
+
+            "src": {
+                defaultExtension: 'ts',
+                "meta": {
+                    "*.ts": {
+                        "loader": "ts"
+                    }
+                }
+            }
+        },
+
+        meta: {
+            '*.less': {loader: 'less'},
+            '*.css': {loader: 'css'},
+            '*.ts': {loader: 'ts'},
+            '*.txt': {loader: 'text'},
+            '*.html': {loader: 'text'},
+        },
+
+        map: {
+            "ts": "node_modules/plugin-typescript/lib/",
+            "typescript": "node_modules/typescript/lib/",
+
+            json: 'node_modules/systemjs-plugin-json',
+            text: 'node_modules/systemjs-plugin-text',
+            css: 'node_modules/systemjs-plugin-css',
+            less: 'node_modules/systemjs-plugin-less',
+            lesscss: 'node_modules/less',
+
+            'daterangepicker': 'node_modules/bootstrap-daterangepicker',
+            'moment': 'node_modules/moment',
+
+            'bootstrap': 'node_modules/bootstrap/',
+            'angular-material': 'node_modules/angular-material/',
+        }
+    });
+
+    SystemJS.import('./src/demo.ts');
+
+</script>
+</body>
+</html>
