@@ -29,10 +29,10 @@ mod.directive('datepicker', ['$timeout', function ($timeout) {
     return {
         restrict: 'E',
         template: `
-            <div>
+            <div style="width:100%">
                 <!-- 单日期选择器 -->
-                <div class="dropdown" ng-if="singleDatePicker">
-                    <button type="button" data-toggle="dropdown" class="form-control">
+                <div class="dropdown" ng-if="singleDatePicker" layout="row">
+                    <button type="button" flex data-toggle="dropdown" class="form-control input-sm">
                         <div layout="row" layout-align="start center">
                             <div flex class="text-left d-text-overflow">{{startDate}}</div>
                             <div class="caret"></div>
@@ -42,14 +42,14 @@ mod.directive('datepicker', ['$timeout', function ($timeout) {
                 
                 <!-- 范围日期选择器 -->
                 <div ng-if="!singleDatePicker" layout="row" layout-align="start center">
-                    <button type="button" data-toggle="dropdown" class="form-control">
+                    <button type="button" flex data-toggle="dropdown" class="form-control input-sm">
                         <div layout="row" layout-align="start center">
                             <div flex class="text-left d-text-overflow">{{startDate}}</div>
                             <div class="caret"></div>
                         </div>
                     </button>
                     <i style="margin:5px 7px;">-</i>
-                    <button type="button" data-toggle="dropdown" class="form-control">
+                    <button type="button" flex data-toggle="dropdown" class="form-control input-sm">
                         <div layout="row" layout-align="start center">
                             <div flex class="text-left d-text-overflow">{{endDate}}</div>
                             <div class="caret"></div>
