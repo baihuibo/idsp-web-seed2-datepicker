@@ -22,11 +22,15 @@ interface DatepickerOption {
     maxDate?: string | Date | moment.Moment
 
     /* 设置日期范围最大间隔天数 */
-    dateLimit?: number
+    dateLimit?: {
+        days?: number // 多少天
+    }
 
     /* 是否显示时间选择(时分秒选择) */
     timePicker?: boolean
-    timePickerIncrement?: boolean
+
+    /* time选择递增数 */
+    timePickerIncrement?: number
 
     /* 是否显示时间选择(时分秒选择) */
     timePicker24Hour?: boolean
