@@ -83,12 +83,9 @@ mod.directive('datepicker', ['$timeout', function ($timeout) {
                     value = ngModel.$modelValue || ngModel.$viewValue;
 
                     // 监听model值的设置
-                    scope.$parent.$watch(attr['ngModel'],
-                        function (newValue, oldValue, scope) {
-                            if (newValue && newValue != oldValue) {
-                                setDate(newValue);
-                            }
-                        });
+                    scope.$parent.$watch(attr['ngModel'], function (newValue, oldValue, scope) {
+                        setDate(newValue);
+                    });
                 }
 
                 setDate(value);
@@ -103,29 +100,26 @@ mod.directive('datepicker', ['$timeout', function ($timeout) {
             let singleDatePicker = !!option.singleDatePicker;
 
             function setDate(value) {
+                if (picker) {
+                    picker.remove();
+                }
+
                 let strs = String(value || '').split(separator);
                 if (strs.length == 2) {
                     scope['startDate'] = strs[0];
                     scope['endDate'] = strs[1];
                 } else if (strs.length == 1) {
                     scope['startDate'] = scope['endDate'] = strs[0];
+                } else if (!strs.length) {
+                    scope['startDate'] = scope['endDate'] = '';
                 }
 
-                if (scope['startDate']) { // 设置开始时间
-                    option.startDate = scope['startDate'];
-                }
-
-                if (scope['endDate']) { // 设置结束时间
-                    option.endDate = scope['endDate'];
-                }
-
-                if (picker) {
-                    picker.remove();
-                }
+                option.startDate = scope['startDate'] || void 0;
+                option.endDate = scope['endDate'] || void 0;
 
                 initPicker();
 
-                setViewValue(picker);
+                value && setViewValue(picker);
             }
 
             function initPicker() {
