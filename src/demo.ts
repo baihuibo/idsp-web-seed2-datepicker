@@ -10,6 +10,7 @@ const app = module('app', [datepicker]);
 app.run(function ($rootScope) {
 
     $rootScope.rangeOption = {
+        timePicker: true, // 开启时间选择
         singleDatePicker: false
     };
 });

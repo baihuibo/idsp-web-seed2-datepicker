@@ -1,6 +1,6 @@
 {
   "name": "idsp-web-seed2-datepicker",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "日期选择器",
   "main": "src/datepicker.ts",
   "scripts": {
