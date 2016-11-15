@@ -6,7 +6,7 @@ import 'bootstrap-daterangepicker';
 import 'bootstrap-daterangepicker/daterangepicker.css';
 import 'moment';
 import {module} from "angular";
-import defaultsDeep from "lodash/defaultsDeep";
+import {defaultsDeep} from "lodash";
 
 const modName = 'datepicker';
 
