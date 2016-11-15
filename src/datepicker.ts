@@ -2,8 +2,8 @@
 ///<reference path="../typings/daterangepicker/daterangepicker.d.ts"/>
 
 // Created by baihuibo on 2016/10/14.
-import 'daterangepicker';
-import 'daterangepicker/daterangepicker.css';
+import 'bootstrap-daterangepicker';
+import 'bootstrap-daterangepicker/daterangepicker.css';
 import 'moment';
 import {module} from "angular";
 import defaultsDeep from "lodash/defaultsDeep";
