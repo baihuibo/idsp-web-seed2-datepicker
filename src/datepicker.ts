@@ -73,6 +73,11 @@ mod.directive('datepicker', ['$timeout', function ($timeout) {
 
             let option: daterangepicker.Settings = defaultsDeep(scope['option'] || {}, defaultSetting);
 
+            let parentEl = el.closest('.modal-body');
+            if (parentEl.length) {
+                option.parentEl = parentEl;
+            }
+
             if (attr.rangeMode != void 0) {
                 option.singleDatePicker = false;
             }
@@ -80,17 +85,16 @@ mod.directive('datepicker', ['$timeout', function ($timeout) {
             scope.singleDatePicker = option.singleDatePicker;
 
             $timeout(function () {
-                let value = '';
                 if (ngModel) {
-                    value = ngModel.$modelValue || ngModel.$viewValue;
+                    let value = ngModel.$modelValue || ngModel.$viewValue;
 
                     // 监听model值的设置
                     scope.$parent.$watch(attr['ngModel'], function (newValue, oldValue, scope) {
                         setDate(newValue);
                     });
-                }
 
-                setDate(value);
+                    value && setDate(value);
+                }
             });
 
             scope.$on('$destroy', function () {
@@ -106,14 +110,14 @@ mod.directive('datepicker', ['$timeout', function ($timeout) {
                     picker.remove();
                 }
 
-                let strs = String(value || '').split(separator);
-                if (strs.length == 2) {
-                    scope['startDate'] = strs[0];
-                    scope['endDate'] = strs[1];
-                } else if (strs.length == 1) {
-                    scope['startDate'] = scope['endDate'] = strs[0];
-                } else if (!strs.length) {
-                    scope['startDate'] = scope['endDate'] = '';
+                if (value != void 0) {
+                    let strs = String(value || '').split(separator);
+                    if (strs.length == 2) {
+                        scope['startDate'] = strs[0];
+                        scope['endDate'] = strs[1];
+                    } else if (strs.length == 1) {
+                        scope['startDate'] = scope['endDate'] = strs[0];
+                    }
                 }
 
                 option.startDate = scope['startDate'] || void 0;
@@ -121,7 +125,7 @@ mod.directive('datepicker', ['$timeout', function ($timeout) {
 
                 initPicker();
 
-                value && setViewValue(picker);
+                option.startDate && option.endDate && setViewValue(picker);
             }
 
             function initPicker() {
@@ -142,9 +146,8 @@ mod.directive('datepicker', ['$timeout', function ($timeout) {
                 }
                 if (ngModel) {
                     ngModel.$setViewValue(date);
-                } else {
-                    scope.$applyAsync();
                 }
+                scope.$applyAsync();
             }
         }
     }
