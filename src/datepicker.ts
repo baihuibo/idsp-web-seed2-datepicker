@@ -85,16 +85,16 @@ mod.directive('datepicker', ['$timeout', function ($timeout) {
             scope.singleDatePicker = option.singleDatePicker;
 
             $timeout(function () {
+                let value;
                 if (ngModel) {
-                    let value = ngModel.$modelValue || ngModel.$viewValue;
+                    value = ngModel.$modelValue || ngModel.$viewValue || void 0;
 
                     // 监听model值的设置
                     scope.$parent.$watch(attr['ngModel'], function (newValue, oldValue, scope) {
                         setDate(newValue);
                     });
-
-                    value && setDate(value);
                 }
+                setDate(value);
             });
 
             scope.$on('$destroy', function () {
@@ -105,7 +105,7 @@ mod.directive('datepicker', ['$timeout', function ($timeout) {
             let {format, separator} = option.locale;
             let singleDatePicker = !!option.singleDatePicker;
 
-            function setDate(value) {
+            function setDate(value?) {
                 if (picker) {
                     picker.remove();
                 }
