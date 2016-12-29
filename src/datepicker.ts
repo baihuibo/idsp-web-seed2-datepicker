@@ -1,6 +1,3 @@
-///<reference path="../typings/datepicker.d.ts"/>
-///<reference path="../typings/daterangepicker/daterangepicker.d.ts"/>
-
 // Created by baihuibo on 2016/10/14.
 import 'bootstrap-daterangepicker';
 import 'bootstrap-daterangepicker/daterangepicker.css';
@@ -69,7 +66,7 @@ mod.directive('datepicker', ['$timeout', function ($timeout) {
         },
         require: '?ngModel',
         link(scope, el, attr,
-             ngModel: ng.INgModelController){
+             ngModel: angular.INgModelController){
 
             let option: daterangepicker.Settings = defaultsDeep(scope['option'] || {}, defaultSetting);
 
